@@ -1,8 +1,18 @@
-.heading {
+.header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.title {
     font-family: var(--mono);
 }
 
 .logo {
     vertical-align: middle;
-    margin: 0 9px;
+    margin-right: 0.5rem;
+}
+
+.subtitle {
+    color: gray;
 }
