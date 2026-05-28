@@ -11,7 +11,7 @@ export function Searchbar({ query, setQuery, search }) {
                 value={query}
                 onChange={queryUpdate}
                 className={styles.input}
-                placeholder="Type a github username"
+                placeholder="Type a Github username & press Enter..."
             />
             <button type="submit" className={styles.btn} onClick={search}>
                 Search
