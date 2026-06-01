@@ -1,0 +1,39 @@
+.section {
+    width: 100%;
+    color: var(--light);
+    font-size: 0.85rem;
+    font-family: var(--mono);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.4rem;
+    text-transform: uppercase;
+}
+
+.badge {
+    background-color: var(--dim);
+    color: black;
+    padding-inline: 0.6rem;
+    border-radius: var(--border-md);
+}
+
+.filter {
+    border: 1px solid var(--border);
+    border-radius: var(--border-md);
+    min-width: 10rem;
+    padding: 0.35rem 0.7rem;
+    background-color: var(--bg);
+}
+.filter::placeholder {
+    font-weight: lighter;
+    font-family: var(--mono);
+}

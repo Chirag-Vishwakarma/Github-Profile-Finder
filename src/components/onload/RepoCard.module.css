@@ -1,6 +1,33 @@
-.repoSection {
-    min-height: 100px;
-    background-color: blue;
+.card {
+    border: 1px solid var(--border);
+    border-radius: var(--border-md);
+    padding: 1rem;
+    line-height: 1.2;
+    background-color: white;
 }
+
+.name {
+    font-weight: bold;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.desc {
+    font-family: var(--sans);
+    min-height: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+    font-size: 0.75rem;
+}
+
+.footer {
+}
+
+.lang {
+}
+
+.dot {
+}
+
 .stat {
 }

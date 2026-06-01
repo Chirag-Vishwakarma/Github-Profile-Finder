@@ -6,10 +6,9 @@ export function ProfileCard() {
         <div className={styles.card}>
             {/* profile detail */}
             <div className={styles.top}>
-                <div>
-                    <img src={reactLogo} className={styles.img} />
-                </div>
-                <div>
+                <img src={reactLogo} className={styles.avatar} />
+
+                <div className={styles.info}>
                     <div className={styles.name}>Chirag Vishwakarma</div>
                     <div className={styles.login}>@Chirag-Vishwakarma</div>
                     <div className={styles.bio}>

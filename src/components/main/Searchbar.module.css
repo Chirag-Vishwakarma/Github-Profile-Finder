@@ -2,15 +2,14 @@
     display: flex;
     gap: 0.5rem;
     width: 100%;
-    margin-bottom: 1.5rem;
 }
 
 .input {
     flex: 1;
-    padding: 0.9rem;
-    border-radius: 8px;
+    padding: 0.8rem;
+    border-radius: var(--border-md);
     font-size: 1rem;
-    border: 1px solid var(--light);
+    border: 1px solid var(--border);
     transition: box-shadow 1s;
 }
 
@@ -23,12 +22,12 @@
 }
 
 .btn {
-    padding: 0.9rem 1.5rem;
+    padding: 0.8rem 1.3rem;
     font-size: 1rem;
     color: white;
     background-color: #238636;
-    border-radius: 8px;
-    border: 1px solid var(--light);
+    border-radius: var(--border-md);
+    border: 1px solid var(--border);
     font-size: 0.9rem;
     font-weight: bold;
 }

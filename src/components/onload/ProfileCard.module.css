@@ -9,17 +9,23 @@
     font-size: 0.8rem;
     color: var(--light);
 
-    border: 1px solid var(--light);
-    border-radius: 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--border-md);
+    background-color: white;
 }
 
 .top {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 1.25rem;
 }
 
-.img {
+.info {
+    flex: 1;
+}
+
+.avatar {
     border-radius: 50%;
     width: 80px;
     height: 80px;
@@ -30,6 +36,7 @@
     font-weight: bold;
     font-size: 1.2rem;
     font-weight: 600;
+    color: black;
 }
 
 .login {
@@ -52,8 +59,9 @@
     font-size: 12px;
     color: var(--light);
     padding: 0.4rem 0.75rem;
-    border-radius: 5px;
-    border: 1px solid var(--light);
+    border-radius: var(--border-sm);
+    border: 1px solid var(--border);
+    background-color: inherit;
 }
 
 .bottom {
@@ -61,18 +69,27 @@
 }
 
 .stat {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 0.75rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, auto));
+    /* grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); */
+    gap: 10px;
 }
 .statCard {
     height: 4.5rem;
-    width: 7rem;
-    border-radius: 5px;
-    border: 1px solid var(--light);
+    min-width: 7rem;
+    flex: 1;
+    border-radius: var(--border-sm);
+    border: 1px solid var(--border);
+    padding: 0.8rem;
+    background-color: var(--bg);
 }
 .statNum {
+    font-family: var(--mono);
+    font-size: 1rem;
+    font-weight: bolder;
+    text-align: center;
 }
 .statLabel {
+    margin-top: 4px;
+    text-align: center;
 }
