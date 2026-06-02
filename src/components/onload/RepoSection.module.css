@@ -1,6 +1,6 @@
 .section {
     width: 100%;
-    color: var(--light);
+    color: var(--color-text-primary);
     font-size: 0.85rem;
     font-family: var(--mono);
     display: flex;
@@ -23,14 +23,16 @@
 }
 
 .badge {
-    background-color: var(--dim);
-    color: black;
+    background-color: var(--color-bg-badge);
+    color: var(--color-text-badge);
     padding-inline: 0.6rem;
     border-radius: var(--border-md);
+    border: 1px solid var(--color-border-badge);
+    color: var(--color-text-secondary);
 }
 
 .filter {
-    border: 1px solid var(--border);
+    border: 1px solid var(--color-border);
     border-radius: var(--border-md);
     min-width: 10rem;
     padding: 0.35rem 0.7rem;
@@ -45,4 +47,21 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, auto));
     gap: 1rem;
+}
+
+.allRepo {
+    margin: auto;
+}
+
+.linkBtn {
+    font-size: 12px;
+    padding: 0.4rem 0.75rem;
+    border-radius: var(--border-sm);
+    border: 1px solid var(--color-border);
+    background-color: inherit;
+    color: var(--color-text-primary);
+}
+.linkBtn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
 }

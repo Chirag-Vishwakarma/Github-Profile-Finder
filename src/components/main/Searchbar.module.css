@@ -9,8 +9,9 @@
     padding: 0.8rem;
     border-radius: var(--border-md);
     font-size: 1rem;
-    border: 1px solid var(--border);
+    border: 1px solid var(--color-border);
     transition: box-shadow 1s;
+    background-color: var(--color-bg-card);
 }
 
 .input:focus {
@@ -24,10 +25,10 @@
 .btn {
     padding: 0.8rem 1.3rem;
     font-size: 1rem;
-    color: white;
+    color: #ffffff;
     background-color: #238636;
     border-radius: var(--border-md);
-    border: 1px solid var(--border);
+    border: 1px solid var(--color-border);
     font-size: 0.9rem;
     font-weight: bold;
 }

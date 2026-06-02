@@ -7,12 +7,12 @@
 
     font-family: var(--sans);
     font-size: 0.8rem;
-    color: var(--light);
+    color: var(--color-text-primary);
 
-    border: 1px solid var(--border);
+    border: 1px solid var(--color-border);
     border-radius: var(--border-md);
 
-    background-color: white;
+    background-color: var(--color-bg-card);
 }
 
 .top {
@@ -37,7 +37,7 @@
     font-weight: bold;
     font-size: 1.2rem;
     font-weight: 600;
-    color: black;
+    color: var(--color-text-secondary);
 }
 
 .login {
@@ -49,20 +49,42 @@
     margin-bottom: 0.5rem;
 }
 
+.meta {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+}
+
 .metaItem {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
     font-size: 0.75rem;
 }
 
-.ghBtn {
+.linkBtn {
     display: flex;
     gap: 0.25rem;
     margin-top: 0.5rem;
     font-size: 12px;
-    color: var(--light);
     padding: 0.4rem 0.75rem;
     border-radius: var(--border-sm);
-    border: 1px solid var(--border);
+    border: 1px solid var(--color-border);
     background-color: inherit;
+    display: inline-block;
+    color: var(--color-text-primary);
+}
+.linkBtn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+.linkText {
+    color: var(--accent);
+}
+.linkText:hover {
+    text-decoration: underline;
+    color: var(--accent);
 }
 
 .bottom {
@@ -77,18 +99,20 @@
 }
 .statCard {
     height: 4.5rem;
+    line-height: 1.2;
     min-width: 7rem;
     flex: 1;
     border-radius: var(--border-sm);
-    border: 1px solid var(--border);
+    border: 1px solid var(--color-border);
     padding: 0.8rem;
     background-color: var(--color-bg);
 }
 .statNum {
     font-family: var(--mono);
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: bolder;
     text-align: center;
+    color: var(--color-text-secondary);
 }
 .statLabel {
     margin-top: 4px;

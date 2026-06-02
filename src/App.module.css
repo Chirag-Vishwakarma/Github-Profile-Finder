@@ -1,3 +1,46 @@
+/*
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.1);
+  --shadow-md: 0 4px 10px rgba(0,0,0,.15);
+  */
+
+/*Light Theme */
+.light {
+    --accent: #58a6ff;
+
+    --color-text-primary: rgb(75, 75, 75);
+    --color-text-secondary: #000000;
+
+    --color-border: rgb(175, 175, 175);
+
+    --color-bg: rgb(245, 245, 245);
+    --color-bg-card: #ffffff;
+
+    --color-bg-badge: rgb(225, 225, 225);
+    --color-text-badge: #000000;
+    --color-border-badge: #ffffff;
+
+    --color-logo: #000000;
+}
+
+/*Dark Theme */
+.dark {
+    --color-logo: #ffffff;
+
+    --accent: #58a6ff;
+
+    --color-text-primary: #8b949e;
+    --color-text-secondary: #ffffff;
+
+    --color-border: #30363d;
+
+    --color-bg: #0d1117;
+    --color-bg-card: #161b22;
+
+    --color-bg-badge: #1d2d3e;
+    --color-text-badge: #accent;
+    --color-border-badge: #1f4068;
+}
+
 .app {
     max-width: 768px;
     margin-inline: auto;
@@ -15,7 +58,7 @@
     text-align: center;
     padding: 6rem 0.8rem;
     font-family: var(--mono);
-    color: gray;
+    color: var(--light);
     line-height: 2.4;
 }
 

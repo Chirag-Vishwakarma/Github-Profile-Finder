@@ -1,15 +1,14 @@
 import styles from './RepoSection.module.css';
 import { RepoCard } from './RepoCard';
 
-const arr = [1, 2, 3, 4];
-
-export function RepoSection() {
+export function RepoSection({ repos }) {
+    const visible = repos.slice(0, 6);
     return (
         <div className={styles.section}>
             <div className={styles.header}>
                 <div className={styles.title}>
                     Repositories
-                    <span className={styles.badge}>4</span>
+                    <span className={styles.badge}>{repos.length}</span>
                 </div>
                 <input
                     className={styles.filter}
@@ -18,9 +17,23 @@ export function RepoSection() {
             </div>
 
             <div className={styles.repos}>
-                {arr.map((value, index) => {
-                    return <RepoCard key={index} />;
+                {visible.map((repo, index) => {
+                    return <RepoCard key={index} repo={repo} />;
                 })}
+            </div>
+
+            <div className={styles.allRepo}>
+                <a
+                    href={
+                        repos.html_url.startsWith('http')
+                            ? repos.html_url
+                            : `https://${repos.html_url}`
+                    }
+                    className={styles.linkBtn}
+                    target="_blank"
+                >
+                    View all {repos.length} Repositories {`->`}
+                </a>
             </div>
         </div>
     );
