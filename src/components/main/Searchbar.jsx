@@ -13,7 +13,7 @@ export function Searchbar({ query, setQuery, search }) {
                 className={styles.input}
                 placeholder="Type a Github username & press Enter..."
             />
-            <button type="submit" className={styles.btn} onClick={search}>
+            <button type="submit" className={`${styles.btn}`} onClick={search}>
                 Search
             </button>
         </div>

@@ -3,6 +3,9 @@
     color: var(--light);
     font-size: 0.85rem;
     font-family: var(--mono);
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
 }
 
 .header {
@@ -31,9 +34,15 @@
     border-radius: var(--border-md);
     min-width: 10rem;
     padding: 0.35rem 0.7rem;
-    background-color: var(--bg);
+    background-color: inherit;
 }
 .filter::placeholder {
     font-weight: lighter;
     font-family: var(--mono);
+}
+
+.repos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, auto));
+    gap: 1rem;
 }

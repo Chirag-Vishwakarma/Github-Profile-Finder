@@ -1,0 +1,16 @@
+.theme {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+}
+
+.theme:hover::before {
+    border-radius: var(--border-sm);
+    content: attr(data-tooltip);
+    position: relative;
+    bottom: 0;
+    left: 0;
+    border: 1px solid black;
+    padding: 4px 6px;
+    font-size: 0.7rem;
+}

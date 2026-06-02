@@ -1,6 +1,8 @@
 import styles from './RepoSection.module.css';
 import { RepoCard } from './RepoCard';
 
+const arr = [1, 2, 3, 4];
+
 export function RepoSection() {
     return (
         <div className={styles.section}>
@@ -14,7 +16,12 @@ export function RepoSection() {
                     placeholder="filter repos..."
                 />
             </div>
-            <RepoCard />
+
+            <div className={styles.repos}>
+                {arr.map((value, index) => {
+                    return <RepoCard key={index} />;
+                })}
+            </div>
         </div>
     );
 }
