@@ -28,7 +28,7 @@ export function RepoCard({ repo }) {
         <a className={styles.card} href={repo.html_url} target="_blank">
             <div className={styles.name}>{repo.name}</div>
             <div className={styles.desc}>
-                {repo.description} || "No description"
+                {repo.description || 'No description'}
             </div>
             <div className={styles.footer}>
                 {repo.language && (
