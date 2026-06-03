@@ -4,6 +4,10 @@
     right: 2rem;
 }
 
+.theme:hover {
+    opacity: 0.5;
+}
+
 .theme:hover::before {
     border-radius: var(--border-sm);
     content: attr(data-tooltip);

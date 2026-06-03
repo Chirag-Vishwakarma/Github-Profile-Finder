@@ -1,14 +1,17 @@
 import { useEffect, useState, useCallback } from 'react';
+
 import styles from './App.module.css';
+
+import { ThemeChanger } from './components/main/ThemeChanger.jsx';
 import { Header } from './components/main/Header.jsx';
 import { Searchbar } from './components/main/Searchbar.jsx';
 import { ProfileCard } from './components/onload/ProfileCard.jsx';
 import { RepoSection } from './components/onload/RepoSection.jsx';
-import { ThemeChanger } from './components/main/ThemeChanger.jsx';
 
 function App() {
-    const [query, setQuery] = useState('');
     const [theme, setTheme] = useState('light');
+
+    const [query, setQuery] = useState('');
 
     const [loading, setLoading] = useState(false);
     const [reposLoading, setReposLoading] = useState(false);
@@ -17,9 +20,6 @@ function App() {
     const [repos, setRepos] = useState('');
 
     const [error, setError] = useState('');
-
-    // const [user, setUser] = useState(null);
-    // const [repos, setRepos] = useState([]);
 
     useEffect(() => {
         document.documentElement.style.colorScheme = theme;
@@ -31,21 +31,22 @@ function App() {
         const userName = query.trim();
         if (!userName) return;
 
+        setLoading(true);
         setUser(null);
         setRepos('');
-        setLoading(true);
+        setError('');
 
         try {
             const res = await fetch(
                 `https://api.github.com/users/${encodeURIComponent(userName)}`
             );
 
-            if (res == 404) {
+            if (res.status == 404) {
                 setError(`User ${userName} not found on Github`);
                 setLoading(false);
                 return;
             }
-            if (res == 429) {
+            if (res.status == 429) {
                 setError(
                     `Github API Rate limit exceeded. Please wait a minute & try again`
                 );
@@ -53,7 +54,7 @@ function App() {
                 return;
             }
             if (!res.ok) {
-                setError(`Something went wrong. Please try after sometime.`);
+                setError(`Something went wrong. Please try again.`);
                 setLoading(false);
                 return;
             }
@@ -66,15 +67,18 @@ function App() {
             const repoRes = await fetch(
                 `https://api.github.com/users/${encodeURIComponent(
                     userName
-                )}/repos?sort=updated&per_page=10`
+                )}/repos?sort=updated&per_page=100`
             );
 
             if (repoRes.ok) {
                 const repoData = await repoRes.json();
-                setRepos(repoData);
-                setReposLoading(false);
+                const sorted = repoData.sort((a, b) => {
+                    a.stargazers_count - b.stargazers_count;
+                });
+                setRepos(sorted);
                 return;
             }
+            setReposLoading(false);
         } catch (e) {
             console.error(e);
             setError('Network error. Please try after sometime');
@@ -91,9 +95,15 @@ function App() {
         >
             <ThemeChanger theme={theme} setTheme={setTheme} />
             <Header theme={theme} />
-            <Searchbar query={query} setQuery={setQuery} search={search} />
 
-            {user && <ProfileCard user={user} loading={loading} />}
+            <Searchbar
+                query={query}
+                setQuery={setQuery}
+                search={search}
+                loading={loading}
+            />
+
+            {user && <ProfileCard user={user} />}
             {repos && <RepoSection repos={repos} />}
 
             {!user && (

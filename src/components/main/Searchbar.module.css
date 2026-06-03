@@ -10,12 +10,16 @@
     border-radius: var(--border-md);
     font-size: 1rem;
     border: 1px solid var(--color-border);
-    transition: box-shadow 1s;
+    transition:
+        border 0.2s,
+        box-shadow 0.2s;
     background-color: var(--color-bg-card);
+    outline: none;
 }
 
 .input:focus {
     box-shadow: 0 0 0 3px var(--accent-glow);
+    border-color: var(--accent);
 }
 
 .input::placeholder {
@@ -25,14 +29,15 @@
 .btn {
     padding: 0.8rem 1.3rem;
     font-size: 1rem;
-    color: #ffffff;
-    background-color: #238636;
     border-radius: var(--border-md);
     border: 1px solid var(--color-border);
     font-size: 0.9rem;
     font-weight: bold;
+    background-color: rgb(46, 160, 67);
+    color: #ffffff;
+    opacity: var(--opacity);
 }
 
 .btn:hover {
-    background-color: #2ea043;
+    opacity: var(--hoverOpacity);
 }
