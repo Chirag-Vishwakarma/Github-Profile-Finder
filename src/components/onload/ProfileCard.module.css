@@ -53,6 +53,7 @@
     display: flex;
     gap: 0.6rem;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .metaItem {
@@ -67,12 +68,14 @@
     gap: 0.25rem;
     margin-top: 0.5rem;
     font-size: 12px;
-    padding: 0.4rem 0.75rem;
+    padding: 0.4rem 0.9rem;
     border-radius: var(--border-sm);
     border: 1px solid var(--color-border);
     background-color: inherit;
     display: inline-block;
     color: var(--color-text-primary);
+    text-decoration: none;
+    line-height: 1.2;
 }
 .linkBtn:hover {
     color: var(--accent);

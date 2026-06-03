@@ -4,9 +4,11 @@
     --color-text-secondary: #000000;
 
     --color-border: rgb(175, 175, 175);
+    --color-border-hover: rgb(175, 175, 175);
 
     --color-bg: rgb(245, 245, 245);
-    --color-bg-card: #ffffff;
+    --color-bg-card: rgba(255, 255, 255, 1);
+    --color-bg-card-hover: rgb(245, 245, 245);
 
     --color-bg-badge: rgb(225, 225, 225);
     --color-text-badge: #000000;
@@ -23,9 +25,11 @@
     --color-text-secondary: #ffffff;
 
     --color-border: #30363d;
+    --color-border-hover: #484f58;
 
     --color-bg: #0d1117;
     --color-bg-card: #161b22;
+    --color-bg-card-hover: #1c2128;
 
     --color-bg-badge: #1d2d3e;
     --color-text-badge: #accent;
@@ -33,7 +37,7 @@
 }
 
 .app {
-    max-width: 768px;
+    max-width: 850px;
     margin-inline: auto;
     display: flex;
     flex-direction: column;
@@ -42,6 +46,42 @@
     padding: 2rem 1rem 5rem 1rem;
     gap: 1.5rem;
     margin-inline: auto;
+}
+
+.loadSection {
+    width: 100%;
+    text-align: center;
+    padding: 4rem 0.8rem;
+}
+
+.spinner {
+    display: inline-block;
+    height: 2rem;
+    width: 2rem;
+    border-style: solid;
+    border-top: 5px;
+    border-right: 5px;
+    border-color: var(--color-border);
+    border-radius: 50%;
+    animation: spinner 0.5s infinite linear;
+}
+
+.error {
+    border: 2px solid red;
+    color: red;
+    width: 100%;
+    text-align: center;
+    padding: 0.3rem;
+    margin-block: 0.5rem;
+}
+
+@keyframes spinner {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .placeholderSection {

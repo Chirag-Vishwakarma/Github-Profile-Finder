@@ -5,6 +5,10 @@
     line-height: 1.2;
     background-color: var(--color-bg-card);
 }
+.card:hover {
+    border-color: var(--color-border-hover);
+    background-color: var(--color-bg-card-hover);
+}
 
 .name {
     font-weight: bold;
@@ -45,4 +49,9 @@
     display: flex;
     gap: 2px;
     align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }

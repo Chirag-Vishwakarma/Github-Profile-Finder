@@ -25,9 +25,11 @@ export function RepoCard({ repo }) {
 
     const color = langColor[repo.language] || 'rgb(200,200,200)';
     return (
-        <div className={styles.card}>
+        <a className={styles.card} href={repo.html_url} target="_blank">
             <div className={styles.name}>{repo.name}</div>
-            <div className={styles.desc}>{repo.description}</div>
+            <div className={styles.desc}>
+                {repo.description} || "No description"
+            </div>
             <div className={styles.footer}>
                 {repo.language && (
                     <span className={styles.lang}>
@@ -71,6 +73,6 @@ export function RepoCard({ repo }) {
                     {repo.forks_count}
                 </span>
             </div>
-        </div>
+        </a>
     );
 }

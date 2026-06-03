@@ -17,7 +17,7 @@ function App() {
     const [reposLoading, setReposLoading] = useState(false);
 
     const [user, setUser] = useState(null);
-    const [repos, setRepos] = useState('');
+    const [repos, setRepos] = useState([]);
 
     const [error, setError] = useState('');
 
@@ -27,13 +27,21 @@ function App() {
             theme === 'light' ? 'rgb(245, 245, 245)' : 'rgb(13, 17, 23)';
     }, [theme]);
 
+    // ___________________________
+
+    // const search = useCallback(() => {
+    //     setLoading(true);
+    //     setReposLoading(true);
+    // }, [query]);
+    // ___________________________
+
     const search = useCallback(async () => {
         const userName = query.trim();
         if (!userName) return;
 
         setLoading(true);
         setUser(null);
-        setRepos('');
+        setRepos([]);
         setError('');
 
         try {
@@ -41,12 +49,12 @@ function App() {
                 `https://api.github.com/users/${encodeURIComponent(userName)}`
             );
 
-            if (res.status == 404) {
+            if (res.status === 404) {
                 setError(`User ${userName} not found on Github`);
                 setLoading(false);
                 return;
             }
-            if (res.status == 429) {
+            if (res.status === 429) {
                 setError(
                     `Github API Rate limit exceeded. Please wait a minute & try again`
                 );
@@ -72,11 +80,10 @@ function App() {
 
             if (repoRes.ok) {
                 const repoData = await repoRes.json();
-                const sorted = repoData.sort((a, b) => {
-                    a.stargazers_count - b.stargazers_count;
+                const sorted = [...repoData].sort((a, b) => {
+                    return a.stargazers_count - b.stargazers_count;
                 });
                 setRepos(sorted);
-                return;
             }
             setReposLoading(false);
         } catch (e) {
@@ -103,10 +110,29 @@ function App() {
                 loading={loading}
             />
 
-            {user && <ProfileCard user={user} />}
-            {repos && <RepoSection repos={repos} />}
+            {error && <div className={styles.error}>⚠ {error}</div>}
 
-            {!user && (
+            {loading && (
+                <div className={styles.loadSection}>
+                    <span className={styles.spinner}></span>
+                    <div style={{ marginBlock: '1rem' }}>
+                        fetching profile...
+                    </div>
+                </div>
+            )}
+
+            {user && (
+                <>
+                    <ProfileCard user={user} />
+                    <RepoSection
+                        repos={repos}
+                        loading={reposLoading}
+                        profileURL={user.html_url}
+                    />
+                </>
+            )}
+
+            {!user && !loading && !error && (
                 <div className={styles.placeholderSection}>
                     <div className={styles.placeholderIcon}>{'{ }'}</div>
                     <div className={styles.placeholdertext}>
