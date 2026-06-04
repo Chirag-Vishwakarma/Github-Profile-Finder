@@ -8,9 +8,9 @@ export function Searchbar({ query, setQuery, search, loading }) {
         return;
     }
 
-    const searchActive = loading || query.trim() !== '';
-    const opacity = searchActive ? 0.8 : 0.5;
-    const hoverOpacity = searchActive ? 1 : 0.5;
+    const searchNow = loading || query.trim() !== '';
+    const opacity = searchNow ? 0.8 : 0.5;
+    const hoverOpacity = searchNow ? 1 : 0.5;
 
     return (
         <div className={styles.searchBar}>
@@ -28,7 +28,7 @@ export function Searchbar({ query, setQuery, search, loading }) {
                 className={`${styles.btn}`}
                 onClick={search}
                 style={{ '--opacity': opacity, '--hoverOpacity': hoverOpacity }}
-                disabled={searchActive}
+                disabled={!searchNow}
             >
                 {loading ? '...' : 'Search'}
             </button>
