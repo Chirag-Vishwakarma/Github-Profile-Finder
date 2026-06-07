@@ -1,16 +1,51 @@
-# React + Vite
+# Github Profile Finder
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Engineered a fully responsive GitHub Profile Finder that enables to search & analyze GitHub accounts in real time.
+- Consumed GitHub REST API to display profile info, repositories, followers, following count, company, location, links.
+- Designed reusable React components & modular styling architecture using CSS Modules.
+- Enhanced application reliability through input validation, loading indicators, error handling, & responsive UI design
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Vercel Link - https://github-profile-finder-jet-omega.vercel.app/
 
-## React Compiler
+## Source Code
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Git Repo URL - https://github.com/Chirag-Vishwakarma/Github-Profile-Finder
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Modern coding practices & clean Mobile-first Responsive Web Design, without using any media query.
+- Consumed GitHub REST API to display profile info, repositories, followers, following count, company, location, links.
+- Designed reusable React components & modular styling architecture using CSS Modules.
+- Enhanced application reliability through input validation, loading indicators, error handling, & responsive UI design
+- Repository filter
+- Dark & Light theme toggle implementation
+
+## Techstack used
+
+- React.js
+- JavaScript (ES6+)
+- CSS
+- CSS Modules
+- HTML
+- ESlint
+- Prettier
+
+## API Used:
+
+Github REST API
+
+## State Management:
+
+Local State management
+
+## Deployment:
+
+Deployed on Vercel
+
+## Installation
+
+    - git clone https://github.com/Chirag-Vishwakarma/Github-Profile-Finder
+    - npm install
+    - npm run dev
